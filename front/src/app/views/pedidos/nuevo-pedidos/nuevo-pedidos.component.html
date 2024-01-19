@@ -1,0 +1,37 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">{{ title }}</h6>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="pedido" (ngSubmit)="grabar()">
+      <div class="mb-2">
+        <label for="ID_cliente">Cliente</label>
+        <select class="form-control" formControlName="ID_cliente" required>
+          <option *ngFor="let cliente of clientes" [value]="cliente.ID_cliente">{{ cliente.Nombre }}</option>
+        </select>
+      </div>
+      <div class="mb-2">
+        <label for="Producto">Producto</label>
+        <input type="text" class="form-control" formControlName="Producto" required/>
+      </div>
+
+        <div class="mb-2">
+        <label for="Cantidad">Cantidad</label>
+        <input type="number" class="form-control" formControlName="Cantidad" required/>
+      </div>
+
+      <div class="mb-2">
+        <button
+          type="submit"
+          class="btn btn-primary"
+
+        >
+          Grabar
+        </button>
+        <button class="btn btn-secondary" routerLink="/pedidos">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
