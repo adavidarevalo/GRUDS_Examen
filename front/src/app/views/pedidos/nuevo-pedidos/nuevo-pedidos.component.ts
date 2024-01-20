@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 import { PedidoService } from '../../../Services/pedido.service';
 import { ClienteService } from '../../../Services/cliente.service';
 import { ICliente } from '../../../Interfaces/icliente';
+import moment from 'moment';
 
 @Component({
   selector: 'app-nuevo-pedido',
@@ -47,11 +48,13 @@ export class NuevoPedidoComponent {
       this.title = 'Actualizar Pedido';
       this.pedidosServicio.uno(this.id).subscribe((res) => {
         console.log(res);
+        const date = moment(res.Fecha_pedido);
+
         this.pedido.patchValue({
           ID_cliente: res.ID_cliente,
           Producto: res.Producto,
           Cantidad: res.Cantidad,
-          Fecha_pedido: res.Fecha_pedido,
+          Fecha_pedido: date.format('YYYY-MM-DD'),
         });
       });
     }

@@ -9,27 +9,54 @@
         <select class="form-control" formControlName="ID_cliente" required>
           <option *ngFor="let cliente of clientes" [value]="cliente.ID_cliente">{{ cliente.Nombre }}</option>
         </select>
+
+         @if (pedido.invalid && (pedido.dirty || pedido.touched)) {
+        <div class="alert">
+          @if (pedido.errors?.["required"]) {
+          <div class="ng-invalid">Cliente es requerido</div>
+          }
+        </div>
+        }
       </div>
       <div class="mb-2">
         <label for="Producto">Producto</label>
         <input type="text" class="form-control" formControlName="Producto" required/>
+         @if (pedido.invalid && (pedido.dirty || pedido.touched)) {
+        <div class="alert">
+          @if (pedido.errors?.["required"]) {
+          <div class="ng-invalid">Producto es requerido</div>
+          }
+        </div>
+        }
       </div>
 
         <div class="mb-2">
         <label for="Cantidad">Cantidad</label>
         <input type="number" class="form-control" formControlName="Cantidad" required/>
+         @if (pedido.invalid && (pedido.dirty || pedido.touched)) {
+        <div class="alert">
+          @if (pedido.errors?.["required"]) {
+          <div class="ng-invalid">Cantidad es requerido</div>
+          }
+          </div>
+        }
       </div>
 
       <div class="mb-2">
+        <label for="Fecha_pedido">Fecha del Pedido</label>
+        <input type="date" class="form-control" formControlName="Fecha_pedido" required/>
+      </div>
+
+      <div class="mb-2">
+        <button class="btn btn-secondary" routerLink="/pedidos">
+          Cancelar
+        </button>
         <button
           type="submit"
           class="btn btn-primary"
 
         >
           Grabar
-        </button>
-        <button class="btn btn-secondary" routerLink="/pedidos">
-          Cancelar
         </button>
       </div>
     </form>

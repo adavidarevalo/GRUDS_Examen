@@ -7,44 +7,40 @@
       <div class="mb-2">
         <label for="Nombre">Nombre</label>
         <input type="text" class="form-control" formControlName="Nombre" />
-        <!-- @if (stock.invalid && (stock.dirty || stock.touched)) {
+        @if (cliente.invalid && (cliente.dirty || cliente.touched)) {
         <div class="alert">
-          @if (stock.errors?.["required"]) {
-          <div class="ng-invalid">Cantidad es requerido</div>
-          }@else if (stock.errors?.["minlength"]) {
-          <div>Debe tener minimo 7 caracteres.</div>
-          }@else if (stock.errors?.["maxlength"]) {
-          <div>Debe tener maximo 17 caracteres.</div>
+           @if (cliente.invalid && (cliente.dirty || cliente.touched)) {
+        <div class="alert">
+          @if (cliente.errors?.["required"]) {
+          <div class="ng-invalid">Nombre es requerido</div>
           }
         </div>
-        } -->
+        }
+        </div>
+        }
       </div>
       <div class="mb-2">
         <label for="Correo">Correo</label>
         <input type="email" class="form-control" formControlName="Correo" />
-        <!-- @if (stock.invalid && (stock.dirty || stock.touched)) {
+        @if (cliente.invalid && (cliente.dirty || cliente.touched)) {
         <div class="alert">
-          @if (stock.errors?.["required"]) {
-          <div class="ng-invalid">El Precio_Venta electrónico es requerido</div>
-          }@else if (stock.errors?.["email"]) {
-          <div>No posee el formato de Precio_Venta electrónico</div>
+          @if (cliente.errors?.["required"]) {
+          <div class="ng-invalid">Correo es requerido</div>
           }
         </div>
-        } -->
+        }
       </div>
 
         <div class="mb-2">
         <label for="Telefono">Telefono</label>
         <input type="email" class="form-control" formControlName="Telefono" />
-        <!-- @if (stock.invalid && (stock.dirty || stock.touched)) {
+       @if (cliente.invalid && (cliente.dirty || cliente.touched)) {
         <div class="alert">
-          @if (stock.errors?.["required"]) {
-          <div class="ng-invalid">El ProveedorId electrónico es requerido</div>
-          }@else if (stock.errors?.["email"]) {
-          <div>No posee el formato de ProveedorId electrónico</div>
+          @if (cliente.errors?.["required"]) {
+          <div class="ng-invalid">Telefono es requerido</div>
           }
         </div>
-        } -->
+        }
       </div>
 
       <div class="mb-2">
